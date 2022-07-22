@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align:center">
+    <h1>Đăng nhập thành công</h1>
+    {% if ds_nguoidung %}
+    <table border="1" align="center">
+        <thead>
+            <tr>
+                <td>
+                    Tên đăng nhập
+                </td>
+                <td>
+                    Email
+                </td>
+                <td>
+                    Mật Khẩu
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dt in ds_nguoidung %}
+            <tr>
+                <td><a href="{% url 'chi_tiet' dt.id %}"> {{dt.ten_dang_nhap}}</a></td>
+                <td>{{dt.email}}</td>
+                <td>{{dt.mat_khau}}</td>
+                <td><a href="{% url 'xoa_nguoidung' dt.id %}">Xoa</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        
+    </table>
+    {% else %}
+    <p style="text-align: center;">Chưa có dữ liệu để hiển thị</p>
+    {% endif %}
+    <form action="/dangnhap">
+        <tr>
+                <td><input type="submit" name="dk" id="dk" value="Đăng nhập"></td>
+        </tr>
+    </form>
+</body>
+</html>

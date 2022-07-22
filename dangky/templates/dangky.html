@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .trai{
+            text-align: left;
+        }
+    </style>
+</head>
+<body style="text-align:center">
+    <h1>Đăng ký</h1>
+    <form action="{%url 'xuly_dangky' %}">
+        <table align="center">
+            <tr>
+                <td class="trai">Tên đăng nhập</td>
+                <td><input type="text" id="ten" name="ten"></td>
+            </tr>
+            <tr>
+                <td class="trai">Email</td>
+                <td><input type="text" id="mail" name="mail"></td>
+            </tr>
+            <tr>
+                <td class="trai">Mật khẩu</td>
+                <td><input type="text" id="matkhau" name="matkhau"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" name="dk" id="dk" value="Đăng ký"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
